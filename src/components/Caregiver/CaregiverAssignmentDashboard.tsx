@@ -6,6 +6,8 @@ import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import useApiCall from "../../hooks/useApiCalls";
+import { CAREGIVER_URL, PATIENT_URL } from "../../services/api";
 
 interface Caregiver {
   id: number;
@@ -61,9 +63,17 @@ const patientsList: Patient[] = [
 // @TODO : mock api calls creat with Json-Server
 
 const CaregiverAssignment: React.FC = () => {
-  const [patients, setPatients] = useState(patientsList);
-  const [caregivers, setCaregivers] = useState(caregiversList);
+  const { data, loading, error } = useApiCall(PATIENT_URL);
+  const [patients, setPatients] = useState<Patient[]>([]);
+  const [caregivers, setCaregivers] = useState<Caregiver[]>([]);
 
+  useEffect(() => {
+    console.log(data);
+    if (data) {
+      console.log("patient:", patients);
+      setPatients(data);
+    }
+  }, [data]);
   //Assign first available caregiver
   const assignCaregiver = (patientId: number) => {
     const availableCG = caregivers.find((caregiver) => caregiver.isAvailable);
@@ -101,11 +111,10 @@ const CaregiverAssignment: React.FC = () => {
       )
     );
   };
-  useEffect(() => {
-    console.log("patients: ", patients);
-    console.log("caregivers: ", caregivers);
-  }, [patients, caregivers]);
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  console.log(patients);
   return (
     <div>
       <h2>Caregiver Assignment Dashboard</h2>
@@ -125,13 +134,6 @@ const CaregiverAssignment: React.FC = () => {
                 <>
                   <Td>
                     <div className={styles.caregiverInfoStatus}>
-                      {/* <div
-                        className={`${styles.statusIndicator} ${
-                          patient.assignedCaregiver.isAvailable
-                            ? styles.availableStatus
-                            : styles.unavailableStatus
-                        }`}
-                      /> */}
                       {patient?.assignedCaregiver?.name}
                     </div>
                   </Td>
@@ -169,8 +171,14 @@ const CaregiverAssignment: React.FC = () => {
 };
 
 const CareGiverList: React.FC = () => {
-  const [caregivers, setCaregivers] = useState(caregiversList);
-  // should show real time status & assignment
+  const { data, loading, error } = useApiCall(CAREGIVER_URL);
+  const [caregivers, setCaregivers] = useState([]);
+  useEffect(() => {
+    data && setCaregivers(data);
+  }, [data]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
   return (
     <div>
       {/* CG Name, Availability, OnGoing Assignment */}
