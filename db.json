@@ -1,0 +1,45 @@
+{
+  "caregivers": [
+    { "id": 1, "name": "Alice Johnson", "isAvailable": true },
+    { "id": 2, "name": "Bob Smith", "isAvailable": false, "patientId": 23467 },
+    { "id": 3, "name": "Charlie Brown", "isAvailable": true },
+    { "id": 4, "name": "David Williams", "isAvailable": true },
+    { "id": 5, "name": "Eva Davis", "isAvailable": false, "patientId": 45678 }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "patientId": 23467,
+      "name": "John Doe",
+      "assignedCaregiver": {
+        "id": 2,
+        "name": "Bob Smith",
+        "isAvailable": false,
+        "patientId": 23467
+      }
+    },
+    {
+      "id": 2,
+      "patientId": 45678,
+      "name": "Mary Johnson",
+      "assignedCaregiver": {
+        "id": 5,
+        "name": "Eva Davis",
+        "isAvailable": false,
+        "patientId": 45678
+      }
+    },
+    { "id": 3, "patientId": 85362, "name": "James Carter" },
+    {
+      "id": 4,
+      "patientId": 33456,
+      "name": "Sophia Lee",
+      "assignedCaregiver": {
+        "id": 4,
+        "name": "David Williams",
+        "isAvailable": true
+      }
+    },
+    { "id": 5, "patientId": 78654, "name": "William Harris" }
+  ]
+}

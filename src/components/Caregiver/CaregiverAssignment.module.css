@@ -1,0 +1,88 @@
+.assignmentContainer {
+  /* Styles for the main container */
+}
+
+.responsiveTable {
+  /* Added styles for responsive table */
+  width: 100%; /* Ensures table fills container width */
+  border-collapse: collapse; /* Removes table borders */
+}
+
+.patientCard {
+  /* Styles for patient card rows */
+  display: flex; /* Makes content display horizontally */
+  justify-content: space-between; /* Spaces content evenly */
+  align-items: center; /* Aligns content vertically */
+  border-bottom: 1px solid #ddd; /* Adds a separator line */
+  padding: 10px; /* Adds padding for better readability */
+}
+
+.caregiverInfo,
+.unassignedContainer,
+.caregiverInfoStatus {
+  /* Styles for caregiverInfo and unassignedContainer */
+  display: flex; /* Makes content display horizontally */
+  align-items: center; /* Aligns content vertically */
+  gap: 1em;
+}
+@media screen and (max-width: 642px) {
+  .patientName {
+    background-color: beige;
+  }
+  .caregiverInfo {
+    display: block;
+  }
+  .updateCaregiverBtn button {
+    padding: none;
+  }
+}
+.statusIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.availableStatus {
+  background-color: green;
+}
+
+.unavailableStatus {
+  background-color: red;
+}
+
+.availabilityText {
+  /* Styles for availabilityText class */
+  margin-left: 5px; /* Adds margin for spacing */
+}
+
+.actionButtons {
+  /* Styles for actionButtons class */
+  display: flex; /* Makes buttons display horizontally */
+  margin-left: auto; /* Aligns buttons to the right */
+}
+.updateCaregiverBtn button {
+  padding: 4px 18px;
+  color: white;
+  font-size: 0.85em;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.updateCaregiverBtn button:first-of-type {
+  background-color: #28a745;
+}
+
+.updateCaregiverBtn button:first-of-type:hover {
+  background-color: #218838;
+}
+
+.updateCaregiverBtn button:last-of-type {
+  background-color: #dc3545;
+}
+
+.updateCaregiverBtn button:last-of-type:hover {
+  background-color: #c82333;
+}

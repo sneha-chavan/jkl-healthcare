@@ -1,0 +1,59 @@
+.schedulerContainer {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.schedulerContainer h2 {
+  font-size: 1.8em;
+  color: #333;
+  text-align: center;
+}
+
+.appointmentCard {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.appointmentCard h3 {
+  font-size: 1.3em;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.appointmentCard p {
+  font-size: 0.9em;
+  color: #555;
+  margin: 4px 0;
+}
+
+.appointmentCard button {
+  padding: 8px 12px;
+  color: white;
+  font-size: 0.85em;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.appointmentCard button:first-of-type {
+  background-color: #28a745;
+}
+
+.appointmentCard button:first-of-type:hover {
+  background-color: #218838;
+}
+
+.appointmentCard button:last-of-type {
+  background-color: #dc3545;
+}
+
+.appointmentCard button:last-of-type:hover {
+  background-color: #c82333;
+}

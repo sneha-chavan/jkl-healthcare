@@ -1,0 +1,36 @@
+.dashboardContainer {
+  padding: 20px;
+}
+
+.addButton {
+  padding: 10px;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #218838;
+}
+
+.patientCard {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.patientCard button {
+  padding: 5px;
+  color: white;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.patientCard button:hover {
+  background-color: #c82333;
+}
